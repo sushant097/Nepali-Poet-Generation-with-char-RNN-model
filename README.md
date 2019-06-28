@@ -1,5 +1,5 @@
 # Nepali Poem Generation using char-rnn  model
-> Inspired By [Andrej Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) work 
+> Inspired By [Andrej Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) work.
 
 **Description:**
 This project use the char-rnn model where
@@ -7,7 +7,7 @@ This project use the char-rnn model where
 * Dropout Probability = 0.2
 * Final Dense layer with units = Number of vocabs=90
 
-Here i use stateful=true in each LSTM layer since it help to maintain long term dependencies in each sequence.
+Here i use stateful=true in each LSTM layer since it help to maintain long term dependencies in each sequence. If `stateful=false` you can use whole file at a once to train.
 
 ```python
 BATCH_SIZE = 128
@@ -28,8 +28,10 @@ The following 3 files are used mainly as:
 ```markdown
 generate.py ==> Used to generate the predicted new text of the given length i.e in this case is Nepali Poem.
 model.py ==> Used to create the model of the Network
-train.py  ==> Used to train the model. Here due to **`stateful=true`** in lSTM, it should be follow as train in Batch.
+train.py  ==> Used to train the model. 
+Here due to `stateful=true` in lSTM, it should be follow as train in Batch.
 ```
+
 > This project you can also use with English text Generation. For eg: Joke large text > 1MB data to generate the new Joke text based on Char-RNN model.
 
 The Model Summary in Keras is shown below:
@@ -90,11 +92,20 @@ or
 कलिलो बस्छौ सारा भएको बेलामा बल्दछ,
 हे मेरी आमा ! म हाम्रा मेरी ! म आएँ
 
-
-**See on the predicted.txt file for more**
 ```
+**See on the predicted.txt file for more**
+
+
+### LOSS AND Accuracy Overview
+![accuracy](https://github.com/sushant097/Nepali-Poet-Generation-with-char-RNN-model/blob/master/image/accuracy.png)
+![Loss](https://github.com/sushant097/Nepali-Poet-Generation-with-char-RNN-model/blob/master/image/loss.png)
+
 
 <i>The model is run for only 21 epoch take me 5 hours in 940MX 2GB Nvidia GPU. The loss and accuracy untill 21 epochs is:
 Loss:1.364  , Accuracy=61%. Train it for more than 40 epochs as loss is nearly 0.20 that can give perfect output of the model.</i>
 
-
+**Tips to Increase Accuracy of the Model**
+* The dataset should be well formated and arranged.
+* Increase Size of dataset minimum >1MB of text .
+* Use More Layer of `LSTM` to deeper understanding but aware of model overfitting.
+* Use more Epoch untill loss is very minimum.

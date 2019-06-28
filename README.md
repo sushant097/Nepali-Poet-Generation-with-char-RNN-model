@@ -1,5 +1,6 @@
 # Nepali Poem Generation using char-rnn  model
-> Inspired By Andrej Karpathy work 
+> Inspired By [Andrej Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) work 
+
 **Description:**
 This project use the char-rnn model where
 * layer of LSTM =3 with units=256
@@ -29,6 +30,8 @@ generate.py ==> Used to generate the predicted new text of the given length i.e 
 model.py ==> Used to create the model of the Network
 train.py  ==> Used to train the model. Here due to **`stateful=true`** in lSTM, it should be follow as train in Batch.
 ```
+> This project you can also use with English text Generation. For eg: Joke large text > 1MB data to generate the new Joke text based on Char-RNN model.
+
 The Model Summary in Keras is shown below:
 ```markdown
 Layer (type)                 Output Shape              Param #
@@ -59,3 +62,39 @@ The char-RNN model is here used to generate the Nepali Poem written by Adikabi "
 * n_vocabs = number of unique characters appear in the whole text i.e 90
 * seq_length = sentence length to be taken set as 60
 * Batch_size = the number of sentence text that is pass to the model at once i.e set as 128. 
+
+**Predicted Text**
+```markdown
+﻿की
+खरिद प्यार मासुकी !
+ए गर्त ! यौनप्यासकी !
+ए पुत्तली विनाश
+ रेशम चुल्यो !
+बादल भन्छौ तिमी नै बिरामी,
+आत्मा बस्छन् किन ? प्राण !
+निश्चल, स्वर्ग भै सारा !
+
+नेपालीको कालो कुस्की, त्यो प्राण !
+के तिम्रो सुनको र म पापी भन्छन् ।
+बिरामी
+or 
+कसरी गइन् ती मेरी आमा, तिम्लाई छाडेर,
+कसरी गइन् बिचरीलाई
+सुनको बारी,
+
+मुनाको बाटो बुझेका आँखा रसाई बिरामी,
+कुइरी दिदी ! चीतनले भन्छिन्, “दैवले हुँदैन,
+
+म आएँ आए समय निदाइ सुनको रामा ।
+
+कलिलो बस्छौ सारा भएको बेलामा बल्दछ,
+हे मेरी आमा ! म हाम्रा मेरी ! म आएँ
+
+
+**See on the predicted.txt file for more**
+```
+
+<i>The model is run for only 21 epoch take me 5 hours in 940MX 2GB Nvidia GPU. The loss and accuracy untill 21 epochs is:
+Loss:1.364  , Accuracy=61%. Train it for more than 40 epochs as loss is nearly 0.20 that can give perfect output of the model.</i>
+
+

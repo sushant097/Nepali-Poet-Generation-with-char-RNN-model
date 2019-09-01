@@ -79,7 +79,8 @@ The char-RNN model is here used to generate the Nepali Poem written by Adikabi "
 नेपालीको कालो कुस्की, त्यो प्राण !
 के तिम्रो सुनको र म पापी भन्छन् ।
 बिरामी
-or 
+
+
 कसरी गइन् ती मेरी आमा, तिम्लाई छाडेर,
 कसरी गइन् बिचरीलाई
 सुनको बारी,
